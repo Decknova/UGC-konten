@@ -1,1 +1,94 @@
 
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UGC Prompt Generator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-theme="dark">
+    <div class="app">
+      <div class="top-bar">
+        <div>
+          <h1>UGC Prompt Generator</h1>
+          <p class="subtitle">Isi brief → klik generate → copy ke AI (Grok / ChatGPT / Claude / Gemini)</p>
+        </div>
+        <button id="theme-toggle" class="btn small secondary">☀️ Light mode</button>
+      </div>
+
+      <form id="ugc-form">
+        <label class="full">
+          Preset cepat
+          <select id="preset">
+            <option value="">– Pilih preset –</option>
+            <option value="storyselling_produk">Storyselling Produk</option>
+            <option value="edukasi_ai">Edukasi AI</option>
+            <option value="review_fashion">Review Fashion / Sandal</option>
+            <option value="hard_selling_bunda">Hard Selling Bunda</option>
+            <option value="soft_selling_umum">Soft Selling Universal</option>
+          </select>
+        </label>
+
+        <div class="grid">
+          <label>
+            Niche / Topik
+            <input type="text" id="niche" placeholder="sandal, fashion anak, AI tools, dll" />
+          </label>
+
+          <label>
+            Kategori Konten
+            <input type="text" id="kategori" placeholder="edukasi / review / storyselling / dll" />
+          </label>
+
+          <label>
+            Tujuan Konten
+            <input type="text" id="tujuan" placeholder="jualan / naikin trust / followers" />
+          </label>
+
+          <label>
+            Target Audiens
+            <input type="text" id="audience" placeholder="bunda, cewek kuliah, anak SD, dll" />
+          </label>
+
+          <label class="full">
+            Masalah / Keinginan Audiens
+            <textarea id="masalah" rows="2" placeholder="tulis 1–3 poin"></textarea>
+          </label>
+
+          <label class="full">
+            Pesan Inti Konten
+            <input type="text" id="pesan" placeholder="1 kalimat inti konten" />
+          </label>
+
+          <label>
+            Platform + Durasi
+            <input type="text" id="durasi" placeholder="TikTok 7s / Reels 15s / Shopee 30s" />
+          </label>
+
+          <label>
+            Format Visual
+            <input type="text" id="visual" placeholder="talking head / B-roll / screen recording" />
+          </label>
+
+          <label>
+            Tone Bahasa
+            <input type="text" id="tone" placeholder="santai / bunda-friendly / elegan" />
+          </label>
+
+          <label>
+            CTA
+            <input type="text" id="cta" placeholder="cek keranjang / follow / save post" />
+          </label>
+        </div>
+
+        <button type="submit" class="btn">Generate Prompt</button>
+      </form>
+
+      <h2>Hasil Prompt</h2>
+      <textarea id="output" rows="18" readonly></textarea>
+      <button id="copy-btn" class="btn secondary">Copy ke Clipboard</button>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
